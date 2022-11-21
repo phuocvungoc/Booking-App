@@ -1,0 +1,56 @@
+POST http://localhost:5000/api/auth/register
+content-type: application/json
+
+{
+    "username" : "phuocvungoc1",
+    "password" : "123456",
+    "fullName" : "Phuoc",
+    "phone" : "0386114415",
+    "email" : "test1@gmail.com",
+    "isAdmin" : false
+}
+
+###
+POST http://localhost:5000/api/auth/login
+content-type: application/json
+
+{
+    "username" : "phuocvungoc",
+    "password" : "1234567"
+}
+
+###
+GET http://localhost:5000/api/hotels/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZkYWU5ZDhkN2FiYzMzMTI4ZDg2YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2NTEzMTE5NX0.ok7_wqz76SkcjGKbRevWoj8lsxTbSNktAeif8mE9wew
+
+###
+GET http://localhost:5000/api/hotels/room/6311a9c64a642f01423490bf
+
+###
+POST http://localhost:5000/api/transaction
+content-type: application/json
+
+{
+    "hotels": "6311a54a4a642f0142349086",
+    "hotel" : "HANOI ROYAL PALACE HOTEL 2",
+    "payment": "Credit Card",
+    "rooms": [101, 102],
+    "date": "15/11/2022 - 20/11/2022",
+    "status": "Checkin",
+    "totalPrice": 14700,
+    "username": "phuocvungoc"
+}
+
+###
+GET http://localhost:5000/api/transaction
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZkYWU5ZDhkN2FiYzMzMTI4ZDg2YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2NTEzMTE5NX0.ok7_wqz76SkcjGKbRevWoj8lsxTbSNktAeif8mE9wew
+
+###
+GET http://localhost:5000/api/transaction/balance
+
+###
+GET http://localhost:5000/api/transaction/latest
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2ZkYWU5ZDhkN2FiYzMzMTI4ZDg2YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2NTEzMTE5NX0.ok7_wqz76SkcjGKbRevWoj8lsxTbSNktAeif8mE9wew
+
+###
+GET http://localhost:5000/api/hotels/search/?city=ha%20noi&min=0&max=999&maxPeople=1&room=1&startDate=2022/10/20&endDate=2022/10/22

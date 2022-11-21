@@ -1,0 +1,22 @@
+.trans {
+  display: flex;
+  width: 100%;
+  .transContainer {
+    flex: 6;
+  }
+}
+
+.datatable {
+  height: 600px;
+  padding: 20px;
+
+  .datatableTitle {
+    width: 100%;
+    font-size: 24px;
+    color: gray;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
